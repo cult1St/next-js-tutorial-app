@@ -1,69 +1,84 @@
 import Image from "next/image";
+import ProductSection from "./components/ProductSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main id="main">
+      {/* HERO: two columns on desktop, one column on mobile. */}
+      <section className="container hero">
+        <div className="hero-copy">
+          <p className="eyebrow">THE EVERYDAY COLLECTION / 2026</p>
+          <h1>
+            A little less.
+            <br />A little <em>better.</em>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="intro">
+            Considered essentials for the spaces you love.
+            <br />
+            Made to feel good. Designed to stay.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+          <a className="button" href="#shop">
+            Find your everyday <span>↗</span>
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <p className="quiet-note">— &nbsp; Simple things. Lasting impressions.</p>
+        </div>
+        <div className="hero-image">
+          <span className="image-label">OBJECTS WITH INTENTION</span>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuslr4GfzZvJqW1xHvgYzG1iUycweqwj_OzQhxAKH4iQ&s=10"
+            alt="Natural oak accent chair with a softly upholstered seat"
+            width={420}
+            height={460}
+          />
+          <a className="hero-caption" href="product.html">
+            <div>
+              <strong>The Everyday Chair</strong>
+              <small>Natural oak · ₦85,000</small>
+            </div>
+            <span>↗</span>
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+      <div className="container benefits">
+        <p>
+          ✧ <span>Thoughtfully designed</span>
+        </p>
+        <p>
+          ◉ <span>Quality in every detail</span>
+        </p>
+        <p>
+          ↗ <span>Delivered to your door</span>
+        </p>
+      </div>
+      {/* PRODUCT GRID: reuse this structure as a ProductCard component in React. */}
+      <ProductSection />
+      <section className="container story" id="story">
+        <div className="story-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuslr4GfzZvJqW1xHvgYzG1iUycweqwj_OzQhxAKH4iQ&s=10"
+            alt="Earth-toned ceramic vase with a leafy stem"
+            width={420}
+            height={460}
+            loading="lazy"
+          />
+        </div>
+        <div className="story-copy">
+          <p className="eyebrow">LESS, BUT MORE MEANINGFUL</p>
+          <h2>
+            Make room for
+            <br />
+            the good things.
+          </h2>
+          <p>
+            We believe everyday objects should do more than fill a space. They
+            should bring a little warmth, a little ease, and a lot of you.
+          </p>
+          <a className="text-link" href="#shop">
+            Meet your new essentials ↗
+          </a>
+        </div>
+      </section>
+    </main>
+
   );
 }
